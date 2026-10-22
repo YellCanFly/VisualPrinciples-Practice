@@ -1,0 +1,35 @@
+[
+  {
+    "id": "w02",
+    "number": "02",
+    "title": "眼球结构与视觉形成",
+    "description": "走进眼球内部，跟随光线的旅程，理解从成像到感光的视觉过程。",
+    "tags": ["眼球结构", "光线成像", "感光细胞"],
+    "path": "w02/",
+    "directory": "apps/w02",
+    "port": 5212,
+    "preview": "previews/w02.png"
+  },
+  {
+    "id": "w03",
+    "number": "03",
+    "title": "视觉组织与版式设计",
+    "description": "观察亲密性、重复、对比与对齐，再用自由画布，把视觉关系变成自己的设计。",
+    "tags": ["组织原则", "自由画布", "画面分析"],
+    "path": "w03/",
+    "directory": "apps/w03",
+    "port": 5213,
+    "preview": "previews/w03.png"
+  },
+  {
+    "id": "w04",
+    "number": "04",
+    "title": "立体感知与空间错觉",
+    "description": "改变深度线索、机位与焦距，在二维画面和三维空间之间，重新认识眼前所见。",
+    "tags": ["深度线索", "机位与焦距", "反透视"],
+    "path": "w04/",
+    "directory": "apps/w04",
+    "port": 5214,
+    "preview": "previews/w04.png"
+  }
+]

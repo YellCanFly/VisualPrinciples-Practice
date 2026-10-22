@@ -1,0 +1,31 @@
+
+.anamorph-panel[hidden] { display: none; }
+.anamorph-workspace { align-items: start; }
+.anamorph-views { position: relative; min-width: 0; }
+.anamorph-controls { overflow: visible; }
+.anamorph-section { padding: 18px 20px; }
+.anamorph-section + .anamorph-section { border-top: 1px solid var(--line); }
+.anamorph-section h3 { color: #b5c5ce; font-size: 13px; font-weight: 500; margin-bottom: 13px; }
+.anamorph-section select { color: #dce6ea; font-family: inherit; font-size: 13px; background: #101d27; border: 1px solid #3a4e5c; border-radius: 6px; min-height: 40px; padding: 8px 10px; max-width: 100%; }
+.model-select { width: 100%; }
+.import-color-row { display: flex; gap: 14px; margin-top: 12px; align-items: center; }
+.import-fbx { flex: 1; font-size: 13px; background: transparent; min-height: 40px; }
+.model-color { display: flex; align-items: center; gap: 8px; color: #97afbd; font-size: 12px; }
+.model-color input { width: 34px; height: 31px; padding: 2px; border: 1px solid #4c6674; background: transparent; border-radius: 4px; cursor: pointer; }
+.anamorph-section .basic-range { margin-top: 18px; }
+.anamorph-section .range-heading { font-size: 13px; }
+.anamorph-section .range-value { font-size: 12px; }
+.anamorph-section .basic-range input[type=range] { margin: 17px 0 8px; }
+.import-note, .export-note { font-size: 11px; line-height: 1.8; color: #8fa7b5; margin-top: 10px; }
+.export-size-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 12px; color: #a3b7c4; }
+.export-size-row select { min-height: 35px; padding: 5px 8px; }
+.export-anamorph { display: block; width: 100%; background: #e6bd69; border-color: #e6bd69; color: #17242c; font-size: 14px; font-weight: 600; margin-top: 12px; }
+.export-anamorph:hover { background: #efd394; border-color: #efd394; }
+.anamorph-message { color: #a9ccc3; font-size: 12px; line-height: 1.7; margin-top: 12px; overflow-wrap: anywhere; }
+.anamorph-message.error { color: #ecc18a; }
+.model-loading { position: absolute; inset: 0; display: grid; place-items: center; background: #101b2477; color: #f2d392; border-radius: 10px; z-index: 4; backdrop-filter: blur(2px); }
+@media (max-width: 850px) {
+  .anamorph-workspace { grid-template-columns: 1fr; }
+  .anamorph-section { padding: 22px; }
+  .anamorph-section .range-heading { font-size: 14px; }
+}

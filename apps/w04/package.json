@@ -1,0 +1,18 @@
+{
+  "name": "stereo-perception-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.14.0" },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "serve:local": "node scripts/serve-static.mjs"
+  },
+  "dependencies": { "react": "19.3.1", "react-dom": "19.3.1", "three": "0.186.1", "zustand": "5.0.15", "zod": "4.6.7" },
+  "devDependencies": { "@types/react": "^19.2.0", "@types/react-dom": "^19.2.0", "@types/three": "^0.183.0", "@types/node": "^22.0.0", "@vitejs/plugin-react": "^4.7.0", "@playwright/test": "1.64.1", "typescript": "~5.9.3", "vite": "6.4.5", "vitest": "3.2.7" }
+}

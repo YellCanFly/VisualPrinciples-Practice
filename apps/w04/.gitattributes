@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.cmd text eol=crlf
+*.fbx binary
+*.ply binary
+*.png binary
+*.zip binary

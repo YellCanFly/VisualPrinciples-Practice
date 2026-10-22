@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
+import { PLYExporter } from 'three/addons/exporters/PLYExporter.js';
+import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js';
+globalThis.window = { innerWidth:1024,innerHeight:1024 };
+const bytes = fs.readFileSync('tests/fixtures/stanford-bunny.fbx');
+const object = new FBXLoader().parse(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength),'');
+object.updateMatrixWorld(true);
+let vertices=0,faces=0;
+object.traverse(child=>{if(child.isMesh){let geometry=child.geometry.clone();geometry.deleteAttribute('uv');geometry.deleteAttribute('color');child.geometry=mergeVertices(geometry,1e-5);vertices+=child.geometry.getAttribute('position').count;faces+=(child.geometry.index?.count??child.geometry.getAttribute('position').count)/3;}});
+const output = new PLYExporter().parse(object,undefined,{binary:true,littleEndian:true,excludeAttributes:['uv','color']});
+fs.writeFileSync('public/models/stanford-bunny.ply',new Uint8Array(output));
+console.log({vertices,faces,bytes:output.byteLength});

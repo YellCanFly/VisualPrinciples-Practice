@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f6ef" />
+    <meta name="description" content="视觉原理课程交互实验：探索眼球结构与视觉形成、视觉组织与版式设计、立体感知与空间错觉。" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>视觉原理 · 交互实验</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#experiments">跳到实验目录</a>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="视觉原理交互实验首页">
+        <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true"><path d="M3 22S10 9 22 9s19 13 19 13-7 13-19 13S3 22 3 22Z"/><circle cx="22" cy="22" r="7"/><circle cx="22" cy="22" r="2"/></svg>
+        <span><strong>视觉原理<span class="brand-divider"> / </span>交互实验</strong><small>VISUAL PRINCIPLES · PRACTICE</small></span>
+      </a>
+      <nav aria-label="首页导航"><a class="nav-active" href="#experiments">实验目录</a><a href="#approach">学习方式</a></nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> 视觉原理课程 · 交互实践</p>
+          <h1 id="hero-title">看见，<br />是理解的<span class="title-accent">开始。</span></h1>
+          <p class="hero-description">从一束光，到一幅画，再到一个空间。<br />在观察与动手之间，探索视觉如何发生。</p>
+          <a class="primary-link" href="#experiments">选择一个实验 <span aria-hidden="true">↗</span></a>
+          <p class="hero-note">自由探索，随时回到这里。</p>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <svg viewBox="0 0 520 390" class="perception-diagram" fill="none">
+            <defs>
+              <pattern id="grid" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0V26" stroke="#dae0d5" stroke-width=".7"/></pattern>
+              <clipPath id="disc"><circle cx="266" cy="186" r="123"/></clipPath>
+            </defs>
+            <rect x="32" y="24" width="456" height="328" fill="url(#grid)"/>
+            <path d="M53 188H470M266 31V338" stroke="#a7b4a1" stroke-dasharray="3 7"/>
+            <circle cx="266" cy="186" r="148" stroke="#a7b4a1" stroke-width=".8"/>
+            <circle cx="266" cy="186" r="123" fill="#e9eddc" stroke="#2e5946" stroke-width="1.4"/>
+            <g clip-path="url(#disc)">
+              <path d="M93 306 266 139 439 306M123 306 266 139 409 306M163 306 266 139 369 306M208 306 266 139 324 306M266 139V318M117 211H412M108 241H430M105 279H434" stroke="#7f987e" stroke-width="1"/>
+              <path d="m202 150 64-35 65 35-65 36Z" fill="#c7d8b4" stroke="#2e5946" stroke-width="1.5"/>
+              <path d="m202 150 64 36v78l-64-37Z" fill="#4b7058" stroke="#2e5946" stroke-width="1.5"/>
+              <path d="m266 186 65-36v77l-65 37Z" fill="#a7c48f" stroke="#2e5946" stroke-width="1.5"/>
+              <circle cx="266" cy="186" r="82" stroke="#f8faf2" stroke-width=".8"/>
+            </g>
+            <path d="M69 186 143 186M389 186h61" stroke="#2e5946" stroke-width="1.4"/>
+            <circle cx="69" cy="186" r="5" fill="#2e5946"/><circle cx="450" cy="186" r="5" fill="#2e5946"/>
+            <path d="M143 63h-31v36M389 309h31v-36" stroke="#2e5946" stroke-width="1.4"/>
+            <circle cx="381" cy="94" r="19" fill="#d8e6a5"/><path d="M374 94h14M381 87v14" stroke="#2e5946"/>
+            <text x="53" y="375" font-size="10" letter-spacing="3" fill="#647465" font-family="monospace">LIGHT</text>
+            <text x="225" y="375" font-size="10" letter-spacing="3" fill="#647465" font-family="monospace">PERCEPTION</text>
+            <text x="427" y="375" font-size="10" letter-spacing="3" fill="#647465" font-family="monospace">SPACE</text>
+          </svg>
+          <div class="diagram-caption"><span>光线 · 关系 · 空间</span><span>观察的三个切面</span></div>
+        </div>
+      </section>
+
+      <section class="experiments" id="experiments" aria-labelledby="experiments-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">从这里开始</p><h2 id="experiments-title">每一周，一种看法。</h2></div>
+          <p class="catalog-summary"><span id="week-count">3</span> 个实验 <span aria-hidden="true">/</span> 按周次探索</p>
+        </div>
+        <div id="week-grid" class="week-grid"></div>
+        <noscript><p class="no-script">请启用 JavaScript 查看完整实验目录。也可直接进入：<a href="./w02/">W02 视觉形成</a>、<a href="./w03/">W03 版式设计</a>、<a href="./w04/">W04 立体感知</a>。</p></noscript>
+      </section>
+
+      <section id="approach" class="approach" aria-labelledby="approach-title">
+        <div class="approach-intro"><span class="eyebrow">让理解发生</span><h2 id="approach-title">先观察，再试一试。</h2></div>
+        <ol class="approach-steps">
+          <li><span class="step-number">01</span><div><h3>观察现象</h3><p>先看初始画面，找到值得追问的细节。</p></div></li>
+          <li><span class="step-number">02</span><div><h3>改变条件</h3><p>一次调整一个参数，观察它如何影响所见。</p></div></li>
+          <li><span class="step-number">03</span><div><h3>比较与理解</h3><p>对照变化前后，把现象与课堂原理联系起来。</p></div></li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>视觉原理 · 交互实验</span><span>观察，让问题出现。实践，让理解发生。</span><a href="#top" id="back-to-top">回到顶部 <span aria-hidden="true">↑</span></a></footer>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

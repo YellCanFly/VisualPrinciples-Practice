@@ -1,0 +1,4 @@
+@font-face{font-family:'Lab Sans';src:url('./sans.otf') format('opentype');font-weight:400;font-display:swap}
+@font-face{font-family:'Lab Sans';src:url('./sans-bold.otf') format('opentype');font-weight:700;font-display:swap}
+@font-face{font-family:'Lab Serif';src:url('./serif.otf') format('opentype');font-weight:400;font-display:swap}
+@font-face{font-family:'Lab Serif';src:url('./serif-bold.otf') format('opentype');font-weight:700;font-display:swap}

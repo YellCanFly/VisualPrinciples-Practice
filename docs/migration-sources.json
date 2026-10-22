@@ -1,0 +1,37 @@
+[
+  {
+    "id": "w02",
+    "repository": "https://github.com/YellCanFly/VisualPrinciples-W02-Practice",
+    "commit": "1e0abe45cd6592e522b07cc7dafb571a10afc81d",
+    "copiedFiles": 57,
+    "excludedGeneratedFiles": []
+  },
+  {
+    "id": "w03",
+    "repository": "https://github.com/YellCanFly/VisualPrinciples-W03-Practice",
+    "commit": "ecd944428689d7c35854bf292a46c4435dd802e4",
+    "copiedFiles": 58,
+    "excludedGeneratedFiles": []
+  },
+  {
+    "id": "w04",
+    "repository": "https://github.com/YellCanFly/VisualPrinciples-W04-Practice",
+    "commit": "a9036d8ad771221d6089e17fcd053b7e3c72ece4",
+    "copiedFiles": 139,
+    "excludedGeneratedFiles": [
+      "dist/.nojekyll",
+      "dist/assets/index-Dpj8yh-J.js",
+      "dist/assets/index-s-Q9P6mT.css",
+      "dist/assets/three-txQsvnDU.js",
+      "dist/index.html",
+      "dist/models/LICENSE-SUZANNE.txt",
+      "dist/models/LICENSE-THREE.txt",
+      "dist/models/SOURCE-STANFORD.txt",
+      "dist/models/sources/bmo_primitive.cc",
+      "dist/models/sources/prepare-anamorph-models.py",
+      "dist/models/stanford-bunny.ply",
+      "dist/models/suzanne.ply",
+      "立体感知实验室-本地运行包.zip"
+    ]
+  }
+]
