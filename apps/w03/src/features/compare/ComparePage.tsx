@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ArrowDown, ArrowRight, ArrowUpRight, Check, Copy, Eye, Layers2, Lightbulb, MoveHorizontal, RefreshCcw, SlidersHorizontal, Sparkles } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Copy, Eye, Layers2, Lightbulb, MoveHorizontal, RefreshCcw, SlidersHorizontal, Sparkles } from 'lucide-react';
 import { SceneSvg } from '../../components/SceneSvg';
 import { DIMENSIONS, newScene, type DimensionKey, type SceneDocument } from '../../domain/scene/types';
 import { COMBINED_STEPS, COMPARISON_COPY, DEFAULT_COMPARISON_SETTINGS, copyExample, getCombinedScene, getComparisonScenes, type ComparisonSettings } from '../../data/comparisons/examples';
@@ -47,29 +47,29 @@ export function ComparePage({ onUseExample }: ComparePageProps) {
   const update = <K extends keyof ComparisonSettings>(key: K, value: ComparisonSettings[K]) => setSettings(current => ({ ...current, [key]: value }));
   return <main className={`compare-page${reduceMotion ? ' compare-reduce-motion' : ''}`}>
     <section className="compare-hero" aria-labelledby="compare-page-title">
-      <div><p className="compare-eyebrow"><span/>DESIGN IS A RELATIONSHIP <i>设计，始于关系</i></p><h1 id="compare-page-title">好的排布，<em>有迹可循。</em></h1><p className="compare-hero-intro">从四个基本原则出发，观察微小改变如何影响画面。<br className="compare-desktop-break"/>先看一看，再动手试一试。</p></div>
-      <div className="compare-start"><button className="button primary" onClick={() => onUseExample(newScene())}>打开自由画布<ArrowUpRight size={19}/></button><span>一张空白画布，无限种可能</span></div>
+      <div><h1 id="compare-page-title">设计四原则对比</h1><p className="compare-hero-intro">调整间距、样式、大小与对齐方式，比较同一组元素的排布变化。</p></div>
+      <div className="compare-start"><button className="button primary" onClick={() => onUseExample(newScene())}>打开自由画布<ArrowUpRight size={19}/></button></div>
     </section>
 
     <nav className="principle-tabs" aria-label="四原则">
       {DIMENSIONS.map((item, index) => <button key={item.key} className={`principle-tab${item.key === principle ? ' is-active' : ''}`} aria-current={item.key === principle ? 'page' : undefined} onClick={() => navigate(`/learn/${item.key}`)}>
-        <span className="principle-tab-number">0{index + 1}</span><span className="principle-tab-label">{item.label}<small>{item.english}</small></span><span className={`principle-symbol principle-symbol-${item.key}`} aria-hidden="true"><i/><i/><i/><i/></span>
+        <span className="principle-tab-number">0{index + 1}</span><span className="principle-tab-label">{item.label}</span><span className={`principle-symbol principle-symbol-${item.key}`} aria-hidden="true"><i/><i/><i/><i/></span>
       </button>)}
     </nav>
 
     <section className="comparison-lab" aria-labelledby="current-principle-title">
-      <div className="comparison-lab-heading"><div><p className="comparison-kicker">{dimension.english}<span> / </span> {dimension.label}</p><h2 id="current-principle-title">{copy.title}</h2><p>{copy.intro}</p></div><span className="comparison-lesson-count">0{DIMENSIONS.indexOf(dimension) + 1}<small> / 04</small></span></div>
+      <div className="comparison-lab-heading"><div><p className="comparison-kicker">{dimension.label}</p><h2 id="current-principle-title">{copy.title}</h2><p>{copy.intro}</p></div><span className="comparison-lesson-count">0{DIMENSIONS.indexOf(dimension) + 1}<small> / 04</small></span></div>
       <div className="comparison-display-toolbar"><div className="comparison-legend"><span className="comparison-legend-dot"/>相同内容 · 相同画布 · 不同排布</div><div className="comparison-options"><label className="comparison-check"><input type="checkbox" checked={showLines} onChange={event => setShowLines(event.target.checked)}/><Eye size={15}/><span>显示分析线</span></label><label className="comparison-check"><input type="checkbox" checked={reduceMotion} onChange={event => setReduceMotion(event.target.checked)}/><span>减少动态</span></label></div></div>
       <div className="comparison-mobile-tabs" aria-label="对比版本"><button className={mobileVersion === 'before' ? 'active' : ''} onClick={() => setMobileVersion('before')}>调整前</button><button className={mobileVersion === 'after' ? 'active' : ''} onClick={() => setMobileVersion('after')}>调整后</button></div>
       <div className="comparison-pair">
         {(['before', 'after'] as const).map((version, index) => <article key={version} className={`comparison-version comparison-${version}${mobileVersion === version ? ' mobile-selected' : ''}`}>
-          <div className="comparison-version-label"><span><i/>{version === 'before' ? '调整前' : '调整后'}<small>{version === 'before' ? 'BEFORE' : 'AFTER'}</small></span>{version === 'after' && <span className="comparison-improved"><Check size={12}/>建立视觉关系</span>}</div>
+          <div className="comparison-version-label"><span><i/>{version === 'before' ? '调整前' : '调整后'}</span></div>
           <div className="comparison-canvas"><SceneSvg scene={scenes[version]} aria-label={`${dimension.label}${version === 'before' ? '调整前' : '调整后'}示例`} role="img">{showLines && <AnalysisLines principle={principle} after={index === 1} settings={settings}/>}</SceneSvg></div>
           <p className="comparison-caption">{version === 'before' ? copy.before : copy.after}</p>
         </article>)}
         <span className="comparison-pair-arrow" aria-hidden="true"><ArrowRight size={17}/></span>
       </div>
-      <div className="comparison-controls"><div className="comparison-controls-label"><SlidersHorizontal size={17}/><span>动手调一调<small>看看画面如何变化</small></span></div><div className={`comparison-control-fields${principle === 'contrast' ? ' has-three' : ''}`}>
+      <div className="comparison-controls"><div className="comparison-controls-label"><SlidersHorizontal size={17}/><span>参数调整</span></div><div className={`comparison-control-fields${principle === 'contrast' ? ' has-three' : ''}`}>
         {principle === 'proximity' && <><RangeControl label="组内间距" value={settings.proximity} min={12} max={72} unit="px" onChange={value => update('proximity', value)}/><div className="comparison-range-hint"><span>更紧密</span><MoveHorizontal size={15}/><span>更疏松</span></div></>}
         {principle === 'repetition' && <><RangeControl label="样式统一程度" value={settings.repetition} onChange={value => update('repetition', value)}/><div className="comparison-range-hint"><span>保留变化</span><MoveHorizontal size={15}/><span>更多重复</span></div></>}
         {principle === 'contrast' && <><RangeControl label="字号差异" value={settings.contrast} onChange={value => update('contrast', value)}/><RangeControl label="图形大小差异" value={settings.contrastShape} onChange={value => update('contrastShape', value)}/><RangeControl label="明暗差异" value={settings.contrastColor} onChange={value => update('contrastColor', value)}/></>}
@@ -78,9 +78,8 @@ export function ComparePage({ onUseExample }: ComparePageProps) {
       <div className="comparison-takeaway"><span className="comparison-bulb"><Lightbulb size={20}/></span><div><strong>{copy.takeaway}</strong><p>{copy.note}</p></div><button className="button secondary" onClick={() => onUseExample(copyExample(scenes.after, `${dimension.label} · 自由尝试`))}><Copy size={15}/>复制此示例到新画布<ArrowUpRight size={15}/></button></div>
     </section>
 
-    <section className="combined-section" aria-labelledby="combined-title"><div className="combined-heading"><div><p className="compare-eyebrow">BETTER TOGETHER</p><h2 id="combined-title">四个原则，一起发生作用。</h2><p>同一组元素，逐步建立更清楚的视觉关系。</p></div><span className="combined-label"><Layers2 size={16}/>综合对比</span></div>
-      <div className="combined-lab"><div className="combined-process"><ol>{COMBINED_STEPS.map((step, index) => <li key={step.label}><button onClick={() => setCombinedStep(index)} className={combinedStep === index ? 'active' : ''} aria-pressed={combinedStep === index}><span className="combined-step-number">{index === 0 ? '○' : `0${index}`}</span><span>{step.label}<small>{step.principle}</small></span>{combinedStep === index && <ArrowRight size={17}/>}</button></li>)}</ol><p><Sparkles size={15}/>每一步都可以自由切换，无需按顺序完成。</p></div><div className="combined-preview"><div className="combined-preview-header"><span>0{combinedStep + 1}<i>/</i>05</span><strong>{COMBINED_STEPS[combinedStep].label}</strong><span className="combined-preview-dots" aria-hidden="true">{COMBINED_STEPS.map((_, i) => <i key={i} className={i === combinedStep ? 'active' : ''}/>)}</span></div><SceneSvg scene={combinedScene} aria-label={`综合对比：${COMBINED_STEPS[combinedStep].label}`} role="img"/><div className="combined-preview-bottom"><p>{COMBINED_STEPS[combinedStep].description}</p><button className="icon-button" aria-label="复制当前综合示例到新画布" title="复制到新画布" onClick={() => onUseExample(copyExample(combinedScene, '综合对比 · 自由尝试'))}><Copy size={16}/></button></div></div></div>
+    <section className="combined-section" aria-labelledby="combined-title"><div className="combined-heading"><div><h2 id="combined-title">四原则综合示例</h2><p>依次查看分组、样式统一、层次与对齐对同一画面的影响。</p></div><span className="combined-label"><Layers2 size={16}/>综合对比</span></div>
+      <div className="combined-lab"><div className="combined-process"><ol>{COMBINED_STEPS.map((step, index) => <li key={step.label}><button onClick={() => setCombinedStep(index)} className={combinedStep === index ? 'active' : ''} aria-pressed={combinedStep === index}><span className="combined-step-number">{index === 0 ? '○' : `0${index}`}</span><span>{step.label}<small>{step.principle}</small></span>{combinedStep === index && <ArrowRight size={17}/>}</button></li>)}</ol><p><Sparkles size={15}/>点击任一步骤查看对应画面。</p></div><div className="combined-preview"><div className="combined-preview-header"><span>0{combinedStep + 1}<i>/</i>05</span><strong>{COMBINED_STEPS[combinedStep].label}</strong><span className="combined-preview-dots" aria-hidden="true">{COMBINED_STEPS.map((_, i) => <i key={i} className={i === combinedStep ? 'active' : ''}/>)}</span></div><SceneSvg scene={combinedScene} aria-label={`综合对比：${COMBINED_STEPS[combinedStep].label}`} role="img"/><div className="combined-preview-bottom"><p>{COMBINED_STEPS[combinedStep].description}</p><button className="icon-button" aria-label="复制当前综合示例到新画布" title="复制到新画布" onClick={() => onUseExample(copyExample(combinedScene, '综合对比 · 自由尝试'))}><Copy size={16}/></button></div></div></div>
     </section>
-    <footer className="compare-footer"><span><span className="compare-footer-mark"/>观察是开始，尝试让理解发生。</span><button onClick={() => onUseExample(newScene())}>去自由实践<ArrowRight size={16}/></button><span className="compare-scroll-label"><ArrowDown size={13}/>让每次改变，都有自己的理由</span></footer>
   </main>;
 }

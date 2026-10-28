@@ -1,4 +1,4 @@
-import { ArrowLeft, Check, ChevronLeft, ChevronRight, Microscope, Pause, Play, RotateCcw } from 'lucide-react'
+import { Check, ChevronLeft, ChevronRight, Pause, Play, RotateCcw } from 'lucide-react'
 import { useViewerStore } from '../../store/viewerStore'
 import { visionPrinciples } from '../../data/visionPrinciples'
 
@@ -19,19 +19,12 @@ export default function AnimationControls() {
   const nextStep = useViewerStore((state) => state.nextStep)
   const setAutoAdvance = useViewerStore((state) => state.setAutoAdvance)
   const explorationMode = useViewerStore((state) => state.explorationMode)
-  const exitPhotoreceptors = useViewerStore((state) => state.exitPhotoreceptors)
 
-  if (explorationMode === 'photoreceptors') return (
-    <section className="animation-panel panel photo-exploration-panel" aria-label="感光细胞探索提示">
-      <span className="photo-exploration-icon"><Microscope size={20} /></span>
-      <div><h2>找到位置，再看细胞的分工</h2><p>选择区域，放大形态，切换明暗。原视觉之旅已暂停，返回后可继续。</p></div>
-      <button className="photo-return-action" onClick={exitPhotoreceptors}><ArrowLeft size={14} />返回视觉之旅</button>
-    </section>
-  )
+  if (explorationMode === 'photoreceptors') return null
 
   return (
     <section className="animation-panel panel" aria-label="视觉原理动画控制">
-      <div className="animation-heading"><div><h2>光线的视觉之旅</h2><span>循序探索，理解每一个瞬间</span></div><span className="step-count">当前步骤 <strong>{String(currentStep + 1).padStart(2, '0')}</strong><span> / 06</span></span></div>
+      <div className="animation-heading"><h2>视觉形成动画</h2><span className="step-count">当前步骤 <strong>{String(currentStep + 1).padStart(2, '0')}</strong><span> / 06</span></span></div>
       <div className="journey-timeline" aria-label="教学步骤">
         {visionPrinciples.map((step, index) => <button key={step.id} onClick={() => setStep(index)} className={`timeline-step ${currentStep === index ? 'active' : ''} ${currentStep > index ? 'completed' : ''}`} aria-current={currentStep === index ? 'step' : undefined}><span className="timeline-number">{index < currentStep ? <Check size={12} /> : String(index + 1).padStart(2, '0')}</span><span>{step.title}</span></button>)}
       </div>

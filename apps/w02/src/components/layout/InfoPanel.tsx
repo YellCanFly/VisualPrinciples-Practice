@@ -29,8 +29,6 @@ export default function InfoPanel() {
   const selected = useViewerStore((state) => state.selectedStructure)
   const selectStructure = useViewerStore((state) => state.selectStructure)
   const setStep = useViewerStore((state) => state.setStep)
-  const focusMode = useViewerStore((state) => state.focusMode)
-  const ambientMode = useViewerStore((state) => state.ambientMode)
   const explorationMode = useViewerStore((state) => state.explorationMode)
   const step = visionPrinciples[currentStep]
   const structure = selected ? structureById[selected] : undefined
@@ -40,7 +38,7 @@ export default function InfoPanel() {
 
   return (
     <aside className="info-panel panel" aria-label={structure ? '当前结构说明' : '当前视觉原理说明'}>
-      <div className="info-panel-label"><ScanEye size={16} /> {structure ? '结构探索' : '原理解析'}<span className="tiny-dot" /></div>
+      <div className="info-panel-label"><ScanEye size={16} /> {structure ? '结构说明' : '原理说明'}<span className="tiny-dot" /></div>
       <div className="info-content">
         {structure ? (
           <>
@@ -48,22 +46,21 @@ export default function InfoPanel() {
             <div className="info-index">眼球结构<span className="structure-swatch" style={{ backgroundColor: structure.color }} /></div>
             <h2>{structure.nameZh}</h2>
             <p className="info-description">{structure.description}</p>
-            <div className="key-point"><div><Lightbulb size={16} /><strong>视觉过程中的作用</strong></div><p>{structure.visionRole}</p></div>
+            <div className="key-point"><div><Lightbulb size={16} /><strong>视觉作用</strong></div><p>{structure.visionRole}</p></div>
             {relatedSteps.length > 0 && <div className="related-section"><h3>相关视觉原理</h3><div className="related-step-links">{relatedSteps.map((item) => <button key={item.id} onClick={() => setStep(visionPrinciples.indexOf(item))}>{item.title}<ArrowUpRight size={13} /></button>)}</div></div>}
           </>
         ) : (
           <>
             <div className="info-index">步骤 {String(currentStep + 1).padStart(2, '0')}<span>/ 06</span></div>
             <h2>{step.title}</h2>
-            <p className="info-subtitle">{step.subtitle}</p>
             <p className="info-description">{step.description}</p>
-            <div className="key-point"><div><Lightbulb size={16} /><strong>关键理解</strong></div><p>{step.keyPoint}</p></div>
-            <div className="related-section"><h3>参与这一过程的结构</h3><div className="structure-tags">{step.relatedStructures.map((id) => <button key={id} onClick={() => selectStructure(id)}><span style={{ backgroundColor: structureById[id].color }} />{structureById[id].nameZh}<ArrowUpRight size={11} /></button>)}</div></div>
+            <div className="key-point"><div><Lightbulb size={16} /><strong>要点</strong></div><p>{step.keyPoint}</p></div>
+            <div className="related-section"><h3>相关结构</h3><div className="structure-tags">{step.relatedStructures.map((id) => <button key={id} onClick={() => selectStructure(id)}><span style={{ backgroundColor: structureById[id].color }} />{structureById[id].nameZh}<ArrowUpRight size={11} /></button>)}</div></div>
           </>
         )}
 
         <div className="diagram-card"><div className="diagram-heading"><span />光线与成像示意</div><OpticalDiagram /><p>光线会聚，在视网膜形成倒立、缩小的像</p></div>
-        <div className="observation-note"><span className="observation-line" /><div><strong>试着改变条件</strong><p>{currentStep === 2 ? `切换明暗环境，观察瞳孔${ambientMode === 'bright' ? '收缩' : '扩大'}。` : currentStep === 3 ? `切换观察距离，观察晶状体${focusMode === 'far' ? '变平' : '变凸'}。` : '旋转模型，或点击结构标注，换个角度理解眼球。'}</p></div></div>
+        {(currentStep === 2 || currentStep === 3) && <div className="observation-note"><span className="observation-line" /><div><strong>条件变化</strong><p>{currentStep === 2 ? '切换明暗环境，比较瞳孔大小。' : '切换观察距离，比较晶状体曲率。'}</p></div></div>}
       </div>
     </aside>
   )

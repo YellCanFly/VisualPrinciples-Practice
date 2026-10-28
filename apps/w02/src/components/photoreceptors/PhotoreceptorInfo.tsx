@@ -33,7 +33,7 @@ export default function PhotoreceptorInfo() {
         <div className="info-index">{view === 'detail' ? '局部放大' : '整体定位'}<span>视网膜光感受器</span></div>
         <h2>{selection === 'both' ? '视锥与视杆' : photoreceptorCells[selection].nameZh}</h2>
         <div className="photo-region-note"><h3><MapPin size={13} />{currentRegion.nameZh}</h3><p>{currentRegion.description}</p></div>
-        {(region === 'optic-disc' || (region === 'fovea' && selection === 'rod')) && <div className="photo-empty-hint"><strong>{region === 'optic-disc' ? '这里没有两类感光细胞' : '中央凹中心没有视杆细胞'}</strong><p>{region === 'optic-disc' ? '视盘形成生理盲点，可换一个区域观察细胞。' : '这是正常的分布特征。切换周边视网膜，就能看到视杆。'}</p><button onClick={() => setRegion('peripheral')}>在周边视网膜观察<ArrowUpRight size={12} /></button></div>}
+        {(region === 'optic-disc' || (region === 'fovea' && selection === 'rod')) && <div className="photo-empty-hint"><strong>{region === 'optic-disc' ? '视盘无感光细胞' : '中央凹中心无视杆细胞'}</strong><p>{region === 'optic-disc' ? '视盘形成生理盲点。' : '周边视网膜可观察到视杆。'}</p><button onClick={() => setRegion('peripheral')}>切换到周边视网膜<ArrowUpRight size={12} /></button></div>}
 
         <table className="photo-comparison-table">
           <caption className="sr-only">视锥细胞与视杆细胞的形状、感光与视觉功能比较</caption>

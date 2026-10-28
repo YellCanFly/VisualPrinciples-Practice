@@ -16,9 +16,6 @@ for (const week of weeks) {
 
   const preview = document.createElement('div');
   preview.className = 'week-preview';
-  const label = document.createElement('span');
-  label.className = 'preview-label';
-  label.textContent = '交互实验';
   const showPreviewPlaceholder = () => {
     const artwork = document.createElement('div');
     artwork.className = 'preview-placeholder';
@@ -30,7 +27,7 @@ for (const week of weeks) {
     topic.className = 'placeholder-topic';
     topic.textContent = week.title;
     artwork.append(weekNumber, topic);
-    preview.replaceChildren(artwork, label);
+    preview.replaceChildren(artwork);
   };
   if (typeof week.preview === 'string' && week.preview.trim()) {
     const image = document.createElement('img');
@@ -41,7 +38,7 @@ for (const week of weeks) {
     image.width = 1440;
     image.height = 900;
     image.addEventListener('error', showPreviewPlaceholder, { once: true });
-    preview.append(image, label);
+    preview.append(image);
   } else {
     showPreviewPlaceholder();
   }
@@ -51,22 +48,13 @@ for (const week of weeks) {
   const meta = document.createElement('div');
   meta.className = 'week-meta';
   const number = document.createElement('span');
-  number.textContent = `W${week.number}`;
-  const type = document.createElement('span');
-  type.textContent = `第 ${week.number} 周`;
-  meta.append(number, type);
+  number.textContent = `第 ${Number(week.number)} 周`;
+  meta.append(number);
   const title = document.createElement('h3');
   title.textContent = week.title;
   const description = document.createElement('p');
   description.className = 'week-description';
   description.textContent = week.description;
-  const tags = document.createElement('ul');
-  tags.className = 'week-tags';
-  for (const tag of week.tags) {
-    const item = document.createElement('li');
-    item.textContent = tag;
-    tags.append(item);
-  }
   const action = document.createElement('span');
   action.className = 'week-action';
   action.append(document.createTextNode('进入实验'));
@@ -74,14 +62,8 @@ for (const week of weeks) {
   arrow.setAttribute('aria-hidden', 'true');
   arrow.textContent = '↗';
   action.append(arrow);
-  content.append(meta, title, description, tags, action);
+  content.append(meta, title, description, action);
   link.append(preview, content);
   card.append(link);
   grid.append(card);
 }
-
-document.querySelector('#back-to-top').addEventListener('click', (event) => {
-  event.preventDefault();
-  window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
-  document.querySelector('.brand').focus({ preventScroll: true });
-});

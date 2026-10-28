@@ -13,8 +13,8 @@ function initialTab(): WorkspaceTab {
   return useLab.getState().save.activeModule === 'd10' ? 'd10' : 'd09';
 }
 const MODULES: { id: WorkspaceTab; label: string; title: string; description: string }[] = [
-  { id: 'd09', label: '深度线索', title: '深度线索', description: '改变物体的远近与大小，试着打开或关闭环境线索。' },
-  { id: 'd10', label: '错位片场', title: '强迫透视', description: '让远处的球看起来落在托架上，再移动机位看看。' },
+  { id: 'd09', label: '深度线索', title: '深度线索', description: '调整物体距离和大小，开关环境线索，比较深度感。' },
+  { id: 'd10', label: '错位片场', title: '强迫透视', description: '调整球体距离，再横移机位，比较球体与托架的对齐关系。' },
   { id: 'anamorph', label: '反透视生成', title: '反透视图像生成', description: '把三维模型变成平面图像，再从指定视点还原立体效果。' },
 ];
 

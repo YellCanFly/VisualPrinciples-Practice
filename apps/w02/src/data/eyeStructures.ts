@@ -6,7 +6,7 @@ export const eyeStructures: EyeStructure[] = [
     nameZh: '角膜',
     nameEn: 'Cornea',
     description: '眼球最前方的透明弧面。它保护眼内结构，让外界光线进入眼睛。',
-    visionRole: '光线从空气进入角膜时发生第一次明显折射，为随后聚焦到视网膜做好准备。角膜承担眼睛大部分的屈光能力。',
+    visionRole: '光线从空气进入角膜时发生第一次明显折射。角膜承担眼睛大部分的屈光能力。',
     modelObjectName: 'Cornea_Mesh',
     category: '折射与调节',
     color: '#8ddbe8',
