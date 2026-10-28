@@ -1,0 +1,15 @@
+{
+  "name": "visualprinciples-w05",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.14.0" },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "typecheck": "node --check src/main.js && node --check src/experiments/water-strobe/model.js",
+    "test": "node --test",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "devDependencies": { "vite": "6.4.5" }
+}

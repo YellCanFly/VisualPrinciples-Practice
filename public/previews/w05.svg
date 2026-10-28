@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="100" y1="80" x2="1400" y2="900" gradientUnits="userSpaceOnUse"><stop stop-color="#142c32"/><stop offset="1" stop-color="#08191f"/></linearGradient>
+    <radialGradient id="drop"><stop stop-color="#e5fffa"/><stop offset=".42" stop-color="#8fe4d9"/><stop offset="1" stop-color="#3f9da8"/></radialGradient>
+    <linearGradient id="water"><stop stop-color="#416e75"/><stop offset="1" stop-color="#193e49"/></linearGradient>
+  </defs>
+  <rect width="1440" height="900" rx="12" fill="#f5f6ef"/>
+  <rect x="48" y="44" width="1344" height="74" rx="10" fill="#e5eae0"/>
+  <path d="M80 81h30m-15-15v30" stroke="#315e48" stroke-width="4"/>
+  <rect x="142" y="69" width="300" height="22" rx="5" fill="#789384"/>
+  <rect x="1120" y="67" width="230" height="28" rx="14" fill="#315e48"/>
+  <rect x="48" y="148" width="1344" height="704" rx="16" fill="url(#bg)"/>
+  <path d="M720 180v550" stroke="#385058" stroke-width="2"/>
+  <g stroke="#27444c" stroke-width="1">
+    <path d="M90 300h1260M90 390h1260M90 480h1260M90 570h1260M90 660h1260"/>
+  </g>
+  <g stroke="#8ba8a7" stroke-width="24" stroke-linecap="round">
+    <path d="M260 202h80q35 0 35 35v20"/><path d="M960 202h80q35 0 35 35v20"/>
+  </g>
+  <g fill="url(#drop)">
+    <ellipse cx="375" cy="295" rx="11" ry="15"/><ellipse cx="375" cy="341" rx="12" ry="16"/>
+    <ellipse cx="375" cy="402" rx="12" ry="17"/><ellipse cx="375" cy="476" rx="12" ry="18"/>
+    <ellipse cx="375" cy="563" rx="13" ry="19"/><ellipse cx="375" cy="663" rx="13" ry="19"/>
+    <ellipse cx="1075" cy="283" rx="11" ry="15"/><ellipse cx="1075" cy="328" rx="12" ry="16"/>
+    <ellipse cx="1075" cy="388" rx="12" ry="17"/><ellipse cx="1075" cy="461" rx="12" ry="18"/>
+    <ellipse cx="1075" cy="547" rx="13" ry="19"/><ellipse cx="1075" cy="646" rx="13" ry="19"/>
+  </g>
+  <g stroke="#67abae" stroke-width="3" opacity=".55" stroke-linecap="round">
+    <path d="M375 370v13M375 440v17M375 523v21M375 620v25"/>
+  </g>
+  <g stroke="#f0bd77" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M480 382v175m-17-20 17 20 17-20"/><path d="M1180 557V382m-17 20 17-20 17 20"/>
+  </g>
+  <g fill="url(#water)" stroke="#7badaf" stroke-width="2">
+    <path d="M232 716h286l-20 34H252z"/><path d="M932 716h286l-20 34H952z"/>
+  </g>
+  <path d="M108 798h1224" stroke="#45626a" stroke-width="2"/>
+  <g stroke="#d5c991" stroke-width="4">
+    <path d="M150 810v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35"/>
+  </g>
+</svg>

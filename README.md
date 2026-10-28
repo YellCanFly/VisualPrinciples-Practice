@@ -10,6 +10,7 @@
 | W02 | 眼球结构、视觉形成、视锥与视杆细胞 | [apps/w02](apps/w02) | [进入实验](https://yellcanfly.github.io/VisualPrinciples-Practice/w02/) |
 | W03 | 设计四原则、自由画布、画面分析与作品管理 | [apps/w03](apps/w03) | [进入实验](https://yellcanfly.github.io/VisualPrinciples-Practice/w03/) |
 | W04 | 深度线索、错位片场与反透视生成 | [apps/w04](apps/w04) | [进入实验](https://yellcanfly.github.io/VisualPrinciples-Practice/w04/) |
+| W05 | 运动知觉与时间采样：水滴倒流、悬停与慢落 | [apps/w05](apps/w05) | [进入实验](https://yellcanfly.github.io/VisualPrinciples-Practice/w05/#water-strobe) |
 
 ## 本地打开
 
@@ -49,7 +50,7 @@ npm run preview
 - `setup` 安装根工程和各周应用的依赖；有锁文件时执行 `npm ci`，新应用没有锁文件时执行 `npm install` 并生成锁文件。
 - `check` 检查课程注册表与应用目录。
 - `test` 运行各周已有单元测试。
-- `build` 构建首页及全部已注册应用，各周构建包含自身 TypeScript 检查，最终输出统一的 `dist/`。
+- `build` 构建首页及全部已注册应用；使用 TypeScript 的各周包含自身类型检查，最终输出统一的 `dist/`。
 - `verify:dist` 检查构建结果在真实仓库子路径 `/VisualPrinciples-Practice/` 下的资源访问。
 - `preview` 在 [本地预览地址](http://127.0.0.1:4173/) 提供构建结果。
 
@@ -66,7 +67,8 @@ VisualPrinciples-Practice/
 ├── apps/
 │   ├── w02/                   完整 W02 应用、资源及文档
 │   ├── w03/                   完整 W03 应用、资源及文档
-│   └── w04/                   完整 W04 应用、资源及文档
+│   ├── w04/                   完整 W04 应用、资源及文档
+│   └── w05/                   运动知觉案例、资源及文档
 ├── scripts/                   统一安装、开发、构建与验证
 ├── docs/                      扩展与迁移说明
 ├── .github/workflows/pages.yml
@@ -74,7 +76,8 @@ VisualPrinciples-Practice/
     ├── index.html
     ├── w02/
     ├── w03/
-    └── w04/
+    ├── w04/
+    └── w05/
 ```
 
 每周保留各自的 `package.json`、`package-lock.json`、Vite 配置与测试，兼容现有依赖版本。根脚本读取同一注册表组织开发和构建；无需在首页、构建脚本、部署脚本中分别维护周次列表。
@@ -82,12 +85,12 @@ VisualPrinciples-Practice/
 ## 增加下一周
 
 ```powershell
-npm run add-week -- w05 "第五周实验主题"
+npm run add-week -- w06 "第六周实验主题"
 npm run setup
 npm run dev
 ```
 
-该命令创建 `apps/w05/` 的 Vite + React + TypeScript 模板并加入注册表。在新应用中开发页面，更新 `config/weeks.json` 的说明、标签和预览图即可。已有其他页面也可以按 [新增每周实验](docs/ADDING_A_WEEK.md) 接入。
+该命令创建 `apps/w06/` 的 Vite + React + TypeScript 模板并加入注册表。在新应用中开发页面，更新 `config/weeks.json` 的说明、标签和预览图即可。已有其他页面也可以按 [新增每周实验](docs/ADDING_A_WEEK.md) 接入。W05 内的后续案例通过其 `src/experiments/index.js` 注册，无需重复添加周次。
 
 ## 发布更新
 
@@ -110,3 +113,5 @@ git push origin main
 W03 作品保存在浏览器 IndexedDB，同一浏览器、同一来源下的新旧 Pages 页面使用相同数据库；仍建议用 JSON 导出备份，切换浏览器或设备不会自动同步。W04 参数按页面路径分别保存，新入口从独立设置开始，原页面的数据仍在原路径下；本机导入的 FBX 刷新后需要重新导入。
 
 字体许可保存在 `apps/w03/public/licenses/`；模型许可及来源保存在 `apps/w04/public/models/` 和 [模型来源说明](apps/w04/docs/ASSET_CREDITS.md)。各实验的科学与设计解释、教学示意范围以其原有文档为准。
+
+W05 的频闪水滴为原创 Canvas 教学示意，参考视频链接与素材使用说明见 [W05 来源说明](apps/w05/docs/ASSET_CREDITS.md)。

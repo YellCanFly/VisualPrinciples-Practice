@@ -31,5 +31,16 @@
     "directory": "apps/w04",
     "port": 5214,
     "preview": "previews/w04.png"
+  },
+  {
+    "id": "w05",
+    "number": "05",
+    "title": "运动知觉与时间采样",
+    "description": "水滴倒流：对比真实下落与频闪采样，调整频率观察倒流、悬停和慢落。",
+    "tags": ["运动知觉", "频闪采样", "水滴倒流"],
+    "path": "w05/",
+    "directory": "apps/w05",
+    "port": 5215,
+    "preview": "previews/w05.svg"
   }
 ]
