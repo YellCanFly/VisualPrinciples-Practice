@@ -1,41 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">W05 运动的快慢与节奏、时间采样</title>
+  <desc id="desc">左侧比较时间与进度曲线及同步运动，右侧显示频闪观察中的水滴图样。</desc>
   <defs>
-    <linearGradient id="bg" x1="100" y1="80" x2="1400" y2="900" gradientUnits="userSpaceOnUse"><stop stop-color="#142c32"/><stop offset="1" stop-color="#08191f"/></linearGradient>
+    <linearGradient id="bg" x1="1040" y1="200" x2="1320" y2="820" gradientUnits="userSpaceOnUse"><stop stop-color="#18373c"/><stop offset="1" stop-color="#102329"/></linearGradient>
     <radialGradient id="drop"><stop stop-color="#e5fffa"/><stop offset=".42" stop-color="#8fe4d9"/><stop offset="1" stop-color="#3f9da8"/></radialGradient>
-    <linearGradient id="water"><stop stop-color="#416e75"/><stop offset="1" stop-color="#193e49"/></linearGradient>
   </defs>
   <rect width="1440" height="900" rx="12" fill="#f5f6ef"/>
-  <rect x="48" y="44" width="1344" height="74" rx="10" fill="#e5eae0"/>
-  <path d="M80 81h30m-15-15v30" stroke="#315e48" stroke-width="4"/>
-  <rect x="142" y="69" width="300" height="22" rx="5" fill="#789384"/>
-  <rect x="1120" y="67" width="230" height="28" rx="14" fill="#315e48"/>
-  <rect x="48" y="148" width="1344" height="704" rx="16" fill="url(#bg)"/>
-  <path d="M720 180v550" stroke="#385058" stroke-width="2"/>
-  <g stroke="#27444c" stroke-width="1">
-    <path d="M90 300h1260M90 390h1260M90 480h1260M90 570h1260M90 660h1260"/>
+  <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
+    <text x="60" y="91" fill="#315e48" font-size="30" font-weight="600">W05</text>
+    <path d="M158 58v38" stroke="#ccd7c8" stroke-width="2"/>
+    <text x="187" y="89" fill="#355745" font-size="29">运动知觉与时间采样</text>
+    <path d="M48 122h1344" stroke="#d4ddce" stroke-width="2"/>
+    <text x="62" y="178" fill="#315e48" font-size="25">01　运动的快慢与节奏</text>
+    <text x="1000" y="178" fill="#657d6c" font-size="25">02　水滴倒流</text>
   </g>
-  <g stroke="#8ba8a7" stroke-width="24" stroke-linecap="round">
-    <path d="M260 202h80q35 0 35 35v20"/><path d="M960 202h80q35 0 35 35v20"/>
+  <rect x="48" y="206" width="912" height="636" rx="12" fill="#fcfcf8" stroke="#d5dfd0" stroke-width="2"/>
+  <g stroke="#e1e7dc" stroke-width="2">
+    <path d="M136 302h720M136 402h720M136 502h720M316 252v350M496 252v350M676 252v350"/>
   </g>
+  <path d="M136 252v350h720" stroke="#90a58f" stroke-width="3"/>
+  <g font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="20" fill="#75866f">
+    <text x="69" y="270">进度</text><text x="807" y="637">时间</text><text x="86" y="608">0%</text><text x="66" y="311">100%</text>
+  </g>
+  <path d="M136 602 856 302" stroke="#8191a4" stroke-width="4" stroke-dasharray="10 8"/>
+  <path d="M136 602C496 602 496 302 856 302" stroke="#3a8063" stroke-width="7"/>
+  <path d="M136 602C376 131.842 616 302 856 302" stroke="#bf8c54" stroke-width="5"/>
+  <path d="M496 252v350" stroke="#688d78" stroke-width="2" stroke-dasharray="7 7"/>
+  <circle cx="496" cy="452" r="11" fill="#3a8063" stroke="#fcfcf8" stroke-width="4"/>
+  <circle cx="496" cy="275.691" r="10" fill="#bf8c54" stroke="#fcfcf8" stroke-width="4"/>
+  <path d="M136 700h720M136 770h720" stroke="#d7e1d0" stroke-width="4" stroke-linecap="round"/>
+  <path d="M136 685v30M856 685v30M136 755v30M856 755v30" stroke="#a6b49f" stroke-width="2"/>
+  <rect x="478" y="682" width="36" height="36" rx="10" fill="#3a8063"/>
+  <rect x="901.142" y="752" width="36" height="36" rx="10" fill="#bf8c54"/>
+  <rect x="988" y="206" width="404" height="636" rx="12" fill="url(#bg)"/>
+  <g stroke="#2c4a50" stroke-width="2"><path d="M1020 355h340M1020 460h340M1020 565h340M1020 670h340"/></g>
+  <path d="M1092 268h57q29 0 29 29v20" stroke="#8ba8a7" stroke-width="20" stroke-linecap="round"/>
   <g fill="url(#drop)">
-    <ellipse cx="375" cy="295" rx="11" ry="15"/><ellipse cx="375" cy="341" rx="12" ry="16"/>
-    <ellipse cx="375" cy="402" rx="12" ry="17"/><ellipse cx="375" cy="476" rx="12" ry="18"/>
-    <ellipse cx="375" cy="563" rx="13" ry="19"/><ellipse cx="375" cy="663" rx="13" ry="19"/>
-    <ellipse cx="1075" cy="283" rx="11" ry="15"/><ellipse cx="1075" cy="328" rx="12" ry="16"/>
-    <ellipse cx="1075" cy="388" rx="12" ry="17"/><ellipse cx="1075" cy="461" rx="12" ry="18"/>
-    <ellipse cx="1075" cy="547" rx="13" ry="19"/><ellipse cx="1075" cy="646" rx="13" ry="19"/>
+    <ellipse cx="1178" cy="353" rx="11" ry="15"/><ellipse cx="1178" cy="400" rx="12" ry="16"/>
+    <ellipse cx="1178" cy="461" rx="12" ry="17"/><ellipse cx="1178" cy="535" rx="12" ry="18"/>
+    <ellipse cx="1178" cy="622" rx="13" ry="19"/>
   </g>
-  <g stroke="#67abae" stroke-width="3" opacity=".55" stroke-linecap="round">
-    <path d="M375 370v13M375 440v17M375 523v21M375 620v25"/>
-  </g>
-  <g stroke="#f0bd77" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M480 382v175m-17-20 17 20 17-20"/><path d="M1180 557V382m-17 20 17-20 17 20"/>
-  </g>
-  <g fill="url(#water)" stroke="#7badaf" stroke-width="2">
-    <path d="M232 716h286l-20 34H252z"/><path d="M932 716h286l-20 34H952z"/>
-  </g>
-  <path d="M108 798h1224" stroke="#45626a" stroke-width="2"/>
-  <g stroke="#d5c991" stroke-width="4">
-    <path d="M150 810v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35m90 35v-35"/>
-  </g>
+  <path d="M1280 595V415m-17 20 17-20 17 20" stroke="#f0bd77" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1085 696h186l-16 31h-154z" fill="#244952" stroke="#7badaf" stroke-width="2"/>
+  <path d="M1035 784h310" stroke="#45626a" stroke-width="2"/>
+  <path d="M1050 794v-28m40 28v-28m40 28v-28m40 28v-28m40 28v-28m40 28v-28m40 28v-28m40 28v-28" stroke="#d5c991" stroke-width="3"/>
 </svg>

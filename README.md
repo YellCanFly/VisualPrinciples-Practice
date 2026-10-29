@@ -10,7 +10,7 @@
 | W02 | 眼球结构、视觉形成、视锥与视杆细胞 | [apps/w02](apps/w02) | [进入实验](https://yellcanfly.github.io/VisualPrinciples-Practice/w02/) |
 | W03 | 设计四原则、自由画布、画面分析与作品管理 | [apps/w03](apps/w03) | [进入实验](https://yellcanfly.github.io/VisualPrinciples-Practice/w03/) |
 | W04 | 深度线索、错位片场与反透视生成 | [apps/w04](apps/w04) | [进入实验](https://yellcanfly.github.io/VisualPrinciples-Practice/w04/) |
-| W05 | 运动知觉与时间采样：水滴倒流、悬停与慢落 | [apps/w05](apps/w05) | [进入实验](https://yellcanfly.github.io/VisualPrinciples-Practice/w05/#water-strobe) |
+| W05 | 运动的快慢与节奏、缓动曲线；水滴倒流与时间采样 | [apps/w05](apps/w05) | [进入实验](https://yellcanfly.github.io/VisualPrinciples-Practice/w05/#motion-rhythm) |
 
 ## 本地打开
 
@@ -114,4 +114,4 @@ W03 作品保存在浏览器 IndexedDB，同一浏览器、同一来源下的新
 
 字体许可保存在 `apps/w03/public/licenses/`；模型许可及来源保存在 `apps/w04/public/models/` 和 [模型来源说明](apps/w04/docs/ASSET_CREDITS.md)。各实验的科学与设计解释、教学示意范围以其原有文档为准。
 
-W05 的频闪水滴为原创 Canvas 教学示意，参考视频链接与素材使用说明见 [W05 来源说明](apps/w05/docs/ASSET_CREDITS.md)。
+W05 第一部分为“运动的快慢与节奏”，将缓动曲线、物体位置与时间同步展示；第二部分保留频闪水滴实验，原 `w05/#water-strobe` 链接仍可直接访问。曲线与水滴均由项目代码绘制，章节依据、参考链接与使用范围见 [W05 来源说明](apps/w05/docs/ASSET_CREDITS.md)。
